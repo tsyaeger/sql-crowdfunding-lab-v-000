@@ -30,7 +30,7 @@ FROM projects
 INNER JOIN pledges
 ON projects.id = pledges.projects_id 
 GROUP BY projects.title
-WHERE projects.funding_goal < SUM(pledges.amount);"
+HAVING projects.funding_goal < SUM(pledges.amount);"
 end
 
 
